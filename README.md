@@ -1,6 +1,6 @@
 ![ReCore](_res/ReCore.png)
 # ReCore - 基于SCAXE/Genisys代码
--
+大部分借助aiQWQ
 ## 开源协议
 
 本项目遵循 **GNU 宽通用公共许可证 (LGPL)**。
