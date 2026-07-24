@@ -34,5 +34,5 @@
 
 属于 PocketMine-MP 分支。
 
-##下载
+## 下载
 你可以下载最新版核心在 [Releases page](https://github.com/AerQAQ/ReCore/releases)！
