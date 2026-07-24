@@ -36,3 +36,5 @@
 
 ## 下载
 你可以下载最新版核心在 [Releases page](https://github.com/AerQAQ/ReCore/releases)！
+## 联系我们
+QQ: 3651073229
