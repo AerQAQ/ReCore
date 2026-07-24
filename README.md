@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="_res/ReCore.png" alt="ReCore" width="256">
+  <img src="_res/ReCore.png" alt="ReCore" width="128">
 </p>
 
 <p align="center">
