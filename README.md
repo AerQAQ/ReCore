@@ -7,7 +7,7 @@
   <img src="https://img.shields.io/badge/protocol-31%20~%2070-007ec6?style=flat-square">
 </p>
 
-<h3 align="center">新的 PocketMine-MP 2.0.0 分支</h3>
+<h3 align="center">ReCore</h3>
 
 <p align="center">
   <strong>ReCore</strong> - 基于 SCAXE / Genisys 代码
