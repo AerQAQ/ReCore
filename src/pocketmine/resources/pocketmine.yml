@@ -1,0 +1,154 @@
+# PocketMine-MP 主配置文件
+# 这些设置是那些无法包含在 server.properties 中的设置
+# 其中一些设置是安全的，另一些如果修改不当则可能破坏您的服务器
+# 升级时，新的设置/默认值不会自动出现在此文件中
+# 企鹅翻译
+
+settings:
+ # 服务器端本地化的三字母语言代码
+ # 请在 https://en.wikipedia.org/wiki/List_of_ISO_639-2_codes 查看您的语言代码
+ language: "chs"
+ # 是否将所有字符串翻译为服务器语言环境发送，还是让设备自行处理
+ force-language: false
+ # 服务器关闭时，玩家将被踢出，这是他们屏幕上将显示的消息
+ shutdown-message: "服务器§7关啦§8ヾ(●´∇｀●)ﾉ"
+ # 允许通过 Query 列出插件
+ query-plugins: true
+ # 当插件使用已弃用的 API 方法时，在控制台显示消息
+ deprecated-verbose: true
+ # 默认启用插件和核心性能分析
+ enable-profiling: false
+ # 仅当 tick 测量值低于或等于给定值（默认 20）时才添加结果
+ profile-report-trigger: 20
+ # 异步任务工作线程数
+ # 用于插件异步任务、世界生成、压缩和网络通信
+ # 请将此值设置为大约等于您的核心数
+ # 如果设置为 auto，它将尝试检测核心数（或使用 2）
+ async-workers: auto
+
+memory:
+ # 全局软内存限制（单位：MB）。设置为 0 以禁用
+ # 当使用量超过此限制时，将触发低内存触发器并触发事件以释放内存
+ global-limit: 0
+
+ # 主线程软内存限制（单位：MB）。设置为 0 以禁用
+ # 当使用量超过此限制时，将触发低内存触发器并触发事件以释放内存
+ main-limit: 0
+
+ # 主线程硬内存限制（单位：MB）。设置为 0 以禁用
+ # 当超过此限制时，服务器将停止
+ main-hard-limit: 5120
+
+ # 检查内存的周期（以 tick 为单位，默认 1 秒）
+ check-rate: 20
+
+ # 在低内存状态下持续触发低内存触发器和事件
+ continuous-trigger: true
+
+ # 仅当 memory.continuous-trigger 启用时有效。指定以 memory.check-rate 步长为单位的速率（默认 30 秒）
+ continuous-trigger-rate: 30
+
+ garbage-collection:
+  # 手动触发垃圾回收的周期（以 tick 为单位，默认 30 分钟），设置为 0 以禁用
+  # 这仅影响主线程。其他线程应触发自己的垃圾回收
+  period: 36000
+
+  # 触发异步任务以从工作线程收集垃圾
+  collect-async-worker: true
+
+  # 在低内存时触发
+  low-memory-trigger: true
+
+ max-chunks:
+  # 每个玩家加载的区块限制，覆盖 chunk-sending.max-chunks
+  trigger-limit: 28
+
+  # 触发时进行区块垃圾回收
+  trigger-chunk-collect: true
+
+  # 在低内存时触发
+  low-memory-trigger: true
+
+ world-caches:
+  disable-chunk-cache: true
+  low-memory-trigger: true
+
+
+network:
+ # 批处理数据包的阈值（单位：字节）。只有这些数据包会被压缩
+ # 设置为 0 以压缩所有内容，-1 以禁用
+ batch-threshold: 256
+ # 发送批处理数据包时使用的压缩级别。越高 = 使用更多 CPU，越低 = 更多带宽使用
+ compression-level: 2
+ # 对压缩使用异步任务。增加半/一个 tick 的延迟，减轻主线程的 CPU 负载
+ async-compression: true
+ # 实验性功能，仅适用于 Windows。尝试使用 UPnP 自动进行端口转发
+ upnp-forwarding: false
+
+debug:
+ # 如果 > 1，将在控制台显示调试消息
+ level: 1
+ # 启用 /status, /gc 命令
+ commands: true
+
+level-settings:
+ # 创建世界时使用的默认格式
+ default-format: leveldb
+ # 如果为 true，则在加载时将非默认格式转换为默认格式
+ # 注意：此功能目前未实现
+ convert-format: false
+ # 自动调整世界的 tick 速率以维持每秒 20 tick
+ auto-tick-rate: false
+ auto-tick-rate-limit: 20
+ # 设置基础 tick 速率（1 = 每秒 20 tick，2 = 每秒 10 tick，依此类推）
+ base-tick-rate: 1
+ # 即使其他设置不允许，也每个 tick 都处理所有玩家
+ always-tick-players: false
+
+chunk-sending:
+ # 每个 tick 发送给玩家的区块数量
+ per-tick: 1
+ # 发送给每个玩家周围的区块数量
+ max-chunks: 32
+ # 生成玩家之前需要发送的区块数量
+ spawn-threshold: 28
+ # 在内存中保存区块的序列化副本以便更快地发送
+ # 在大部分静态且同时有大量玩家加入的世界中很有用
+ cache-chunks: true
+
+chunk-ticking:
+ # 每个 tick 处理的最大区块数量
+ per-tick: 16
+ # 围绕玩家进行 tick 处理的区块半径
+ tick-radius: 3
+ light-updates: false
+ clear-tick-list: true
+
+chunk-generation:
+ # 等待生成的区块队列中的最大区块数量
+ queue-size: 2
+ # 等待填充的区块队列中的最大区块数量
+ population-queue-size: 2
+
+ticks-per:
+ animal-spawns: 400
+ monster-spawns: 1
+ autosave: 6000
+ cache-cleanup: 900
+spawn-limits:
+  monsters: 70
+  animals: 15
+  water-animals: 5
+  ambient: 15
+
+aliases:
+ # 示例：
+ # showtheversion: version
+ # savestop: [save-all, stop]
+
+worlds:
+ # 这些设置将覆盖 server.properties 中设置的生成器，并允许加载多个世界
+ # 示例：
+ # world:
+ # seed: 404
+ # generator: FLAT:2;7,59x1,3x3,2;1;decoration(treecount=80 grasscount=45)
