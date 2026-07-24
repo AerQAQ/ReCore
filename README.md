@@ -11,6 +11,7 @@
 
 <p align="center">
   <strong>ReCore</strong> - 基于 SCAXE / Genisys 代码
+ 部分代码使用AI|勿喷
 </p>
 
 ---
